@@ -1,0 +1,7 @@
+// cspell:ignore dbaeumer esbenp
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+  ]
+}
