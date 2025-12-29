@@ -1,11 +1,13 @@
 import {eslintConfig} from 'eslint-config-un';
 
 export default eslintConfig({
+  // defaultConfigsStatus: 'misc-enabled',
   configs: {
     ts: {
-      allowDefaultProject: ['*.config.*ts'],
+      // allowDefaultProject: ['*.config.*ts'],
     },
-    packageJson: true,
+
+    // False positives:
     youDontNeedLodashUnderscore: false,
     zod: false,
   },
