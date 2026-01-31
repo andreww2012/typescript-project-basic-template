@@ -22,29 +22,29 @@
     "test": "nr knip && nr spellcheck && nr lint"
   },
   "dependencies": {
-    "es-toolkit": "1.43.0",
-    "eslint-config-un": "1.0.0-beta.4",
-    "type-fest": "5.3.1"
+    "es-toolkit": "1.44.0",
+    "eslint-config-un": "1.0.0-beta.7",
+    "type-fest": "5.4.3"
   },
   "devDependencies": {
-    "@antfu/ni": "28.0.0",
-    "@commitlint/cli": "20.2.0",
-    "@commitlint/config-conventional": "20.2.0",
-    "@commitlint/types": "20.2.0",
+    "@antfu/ni": "28.2.0",
+    "@commitlint/cli": "20.4.0",
+    "@commitlint/config-conventional": "20.4.0",
+    "@commitlint/types": "20.4.0",
     "@eslint/config-inspector": "1.4.2",
     "@types/node": "20.19.19",
     "cross-env": "10.1.0",
-    "cspell": "9.4.0",
+    "cspell": "9.6.2",
     "eslint": "9.39.2",
-    "knip": "5.78.0",
-    "lefthook": "2.0.13",
-    "npm-check-updates": "19.2.0",
-    "prettier": "3.7.4",
+    "knip": "5.82.1",
+    "lefthook": "2.0.16",
+    "npm-check-updates": "19.3.2",
+    "prettier": "3.8.1",
     "semver": "7.7.3",
     "tsx": "4.21.0",
     "typescript": "5.9.3"
   },
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@10.28.2",
   "engines": {
     "node": "^22.18.0 || >=24"
   }
