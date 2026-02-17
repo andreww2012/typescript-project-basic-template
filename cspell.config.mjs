@@ -4,19 +4,14 @@
 export default {
   useGitignore: true,
   enableGlobDot: true,
-  ignorePaths: ['**/pnpm-lock.yaml', '**/.gitignore', '**/.git/**', '**/.DS_Store'],
+  ignorePaths: ['pnpm-lock.yaml', '**/.gitignore', '**/.git/**', '**/.DS_Store'],
   words: [
     // Names
-    'esbuild',
-    'knip',
-    'lefthook',
-    'urns',
 
     // Misc
     'knipignore',
 
     // Actual-ish English words
-    'dont',
   ],
   overrides: [
     {

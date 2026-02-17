@@ -8,7 +8,7 @@ export default eslintConfig({
     },
 
     // False positives:
-    youDontNeedLodashUnderscore: false,
+    youDontNeedLodashUnderscore: false, // cspell:disable-line dont
     zod: false,
   },
 });

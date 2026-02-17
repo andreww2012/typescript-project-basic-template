@@ -1,11 +1,7 @@
-# cspell:ignore unrs
-onlyBuiltDependencies:
-  - esbuild
-  - lefthook
-  - unrs-resolver
+# cspell:ignore subdeps
+blockExoticSubdeps: true
 
 trustPolicy: no-downgrade
-trustPolicyExclude:
-  - undici-types@6.21.0
-  - chokidar@4.0.3
-  - ts-api-utils@2.3.0
+trustPolicyIgnoreAfter: 43200 # 30 days in minutes
+
+allowBuilds: {}
