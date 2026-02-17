@@ -3,6 +3,10 @@ blockExoticSubdeps: true # cspell:disable-line
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200 # 30 days in minutes
 
+# cspell:disable
 allowBuilds:
   # Not a direct dependency
-  esbuild: false # cspell:disable-line
+  esbuild: false
+  lefthook: true
+  unrs-resolver: false
+# cspell:enable
