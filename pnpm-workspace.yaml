@@ -1,7 +1,8 @@
-# cspell:ignore subdeps
-blockExoticSubdeps: true
+blockExoticSubdeps: true # cspell:disable-line
 
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200 # 30 days in minutes
 
-allowBuilds: {}
+allowBuilds:
+  # Not a direct dependency
+  esbuild: false # cspell:disable-line
