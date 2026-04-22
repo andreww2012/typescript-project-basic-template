@@ -1,7 +1,6 @@
 // Based on https://www.totaltypescript.com/tsconfig-cheat-sheet
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
@@ -18,7 +17,6 @@
     "types": [],
 
     /* Strictness */
-    "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
 

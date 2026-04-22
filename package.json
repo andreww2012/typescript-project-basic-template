@@ -9,6 +9,7 @@
   "scripts": {
     "u": "ncu",
     "u:m": "ncu -t minor",
+    "u:pm": "ncu --dep packageManager",
     "deps:audit": "pnpm audit --audit-level high",
     "deps:dedupe-check": "pnpm dedupe --check",
     "spellcheck": "cspell --no-progress --no-summary .",
@@ -20,32 +21,32 @@
     "lint": "nr format:check && nr lint:types && nr lint:eslint",
     "lint:fix": "nr format:fix && nr lint:eslint:fix",
     "knip": "knip --no-progress",
-    "test": "nr knip && nr spellcheck && nr lint"
+    "test": "nr deps:audit && nr knip && nr spellcheck && nr lint"
   },
   "dependencies": {
-    "es-toolkit": "1.44.0",
-    "eslint-config-un": "1.0.0-beta.7",
-    "type-fest": "5.4.4"
+    "es-toolkit": "1.46.0",
+    "type-fest": "5.6.0"
   },
   "devDependencies": {
-    "@antfu/ni": "28.2.0",
-    "@commitlint/cli": "20.4.1",
-    "@commitlint/config-conventional": "20.4.1",
-    "@commitlint/types": "20.4.0",
-    "@eslint/config-inspector": "1.4.2",
-    "@types/node": "20.19.19",
+    "@antfu/ni": "30.1.0",
+    "@commitlint/cli": "20.5.0",
+    "@commitlint/config-conventional": "20.5.0",
+    "@commitlint/types": "20.5.0",
+    "@eslint/config-inspector": "2.0.0",
+    "@types/node": "22.19.17",
     "cross-env": "10.1.0",
-    "cspell": "9.6.4",
-    "eslint": "9.39.2",
-    "knip": "5.83.1",
-    "lefthook": "2.1.1",
-    "npm-check-updates": "19.3.2",
-    "prettier": "3.8.1",
+    "cspell": "10.0.0",
+    "eslint": "10.2.1",
+    "eslint-config-un": "1.0.0-beta.8",
+    "knip": "6.6.1",
+    "lefthook": "2.1.6",
+    "npm-check-updates": "21.0.3",
+    "prettier": "3.8.3",
     "semver": "7.7.4",
     "tsx": "4.21.0",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   },
-  "packageManager": "pnpm@10.29.3",
+  "packageManager": "pnpm@10.33.1",
   "engines": {
     "node": "^22.18.0 || >=24"
   }
