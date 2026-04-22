@@ -1,12 +1,16 @@
 blockExoticSubdeps: true # cspell:disable-line
 
+minimumReleaseAge: 960 # 16 hours in minutes
+# minimumReleaseAgeExclude: []
+
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200 # 30 days in minutes
 
-# cspell:disable
+strictDepBuilds: true
 allowBuilds:
-  # Not a direct dependency
-  esbuild: false
+  # core-js: false # Donation message
+  esbuild: false # Not a direct dependency
   lefthook: true
-  unrs-resolver: false
-# cspell:enable
+  unrs-resolver: false # cspell:disable-line
+
+# overrides: {}
