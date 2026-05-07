@@ -1,8 +1,7 @@
-// cspell:ignore ncurc
 import type {KnipConfig} from 'knip';
 
 export default {
-  entry: ['.ncurc.cjs'],
+  entry: ['.ncurc.cjs'], // cspell:disable-line
   tags: ['-knipignore'],
   treatConfigHintsAsErrors: true,
 } satisfies KnipConfig;

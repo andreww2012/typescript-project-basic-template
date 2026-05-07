@@ -1,4 +1,5 @@
 {
+  // cspell:disable
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
@@ -6,4 +7,5 @@
     "webpro.vscode-knip",
     // "bradlc.vscode-tailwindcss",
   ],
+  // cspell:enable
 }

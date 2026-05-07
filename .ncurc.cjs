@@ -57,6 +57,7 @@ module.exports = {
     packageName,
     {currentVersion: currentVersionRaw, upgradedVersion: upgradedVersionRaw},
   ) => {
+    // cspell:disable-next-line
     // eslint-disable-next-line sonarjs/no-empty-collection
     if (IGNORED_PACKAGES.has(packageName)) {
       return false;

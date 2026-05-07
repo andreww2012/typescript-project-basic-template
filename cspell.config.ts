@@ -7,10 +7,10 @@ const GLOBALLY_IGNORED_WORDS = {
 } satisfies Record<string, string[]>;
 
 export default {
-  dictionaries: ['npm'],
   useGitignore: true,
   enableGlobDot: true,
-  ignorePaths: ['pnpm-lock.yaml', '**/.gitignore', '**/.git/**'],
+  ignorePaths: ['**/.gitignore', '**/.git/**', '**/pnpm-lock.yaml'],
+  dictionaries: ['npm', 'node', 'typescript', 'fullstack'],
   overrides: [
     {
       filename: ['package.json', 'cspell.config.*s'],
