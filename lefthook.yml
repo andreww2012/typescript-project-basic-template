@@ -2,9 +2,9 @@ pre-push:
   parallel: true
   commands:
     eslint:
-      run: pnpm exec eslint --concurrency auto {push_files}
+      run: pnpm exec eslint --no-warn-ignored {push_files}
     prettier:
-      run: pnpm exec prettier --check {push_files}
+      run: pnpm exec prettier --check --ignore-unknown {push_files}
     spellcheck:
       run: pnpm exec cspell --exclude '**/.*' --no-must-find-files {push_files}
     knip:

@@ -19,13 +19,13 @@
     "format:check": "prettier --check . --log-level warn",
     "format:fix": "prettier --write . --log-level warn",
     "eslint:inspect": "eslint-config-inspector --open false",
-    "lint:eslint": "eslint --cache --concurrency auto",
+    "lint:eslint": "eslint --cache",
     "lint:types": "tsc --noEmit",
     "lint:types:go": "tsgo --noEmit",
     "lint": "nr format:check && nr lint:types:go && nr lint:eslint",
     "lint:fix": "nr format:fix && nr lint:eslint:fix",
     "knip": "knip --no-progress",
-    "test": "nr deps:audit && nr knip && nr spellcheck && nr lint"
+    "test": "nr deps:check && nr knip && nr spellcheck && nr lint"
   },
   "dependencies": {
     "es-toolkit": "1.46.1",
