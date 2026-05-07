@@ -25,6 +25,11 @@
     "lint": "nr format:check && nr lint:types:go && nr lint:eslint",
     "lint:fix": "nr format:fix && nr lint:eslint:fix",
     "knip": "knip --no-progress",
+    "t": "vitest",
+    "t:ui": "vitest --ui",
+    "t:cov": "vitest --coverage",
+    "test:vitest": "nr t run",
+    "test:vitest:cov": "nr t:cov run",
     "test": "nr deps:check && nr knip && nr spellcheck && nr lint"
   },
   "dependencies": {
