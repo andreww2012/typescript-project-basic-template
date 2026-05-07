@@ -21,7 +21,8 @@
     "eslint:inspect": "eslint-config-inspector --open false",
     "lint:eslint": "eslint --cache --concurrency auto",
     "lint:types": "tsc --noEmit",
-    "lint": "nr format:check && nr lint:types && nr lint:eslint",
+    "lint:types:go": "tsgo --noEmit",
+    "lint": "nr format:check && nr lint:types:go && nr lint:eslint",
     "lint:fix": "nr format:fix && nr lint:eslint:fix",
     "knip": "knip --no-progress",
     "test": "nr deps:audit && nr knip && nr spellcheck && nr lint"
@@ -37,6 +38,7 @@
     "@commitlint/types": "20.5.0",
     "@eslint/config-inspector": "2.0.0",
     "@types/node": "22.19.17",
+    "@typescript/native-preview": "7.0.0-dev.20260507.1",
     "cross-env": "10.1.0",
     "cspell": "10.0.0",
     "eslint": "10.2.1",
