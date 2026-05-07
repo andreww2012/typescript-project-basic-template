@@ -2,11 +2,11 @@ pre-push:
   parallel: true
   commands:
     eslint:
-      run: npx eslint --concurrency auto {push_files}
+      run: pnpm exec eslint --concurrency auto {push_files}
     prettier:
-      run: npx prettier --check {push_files}
+      run: pnpm exec prettier --check {push_files}
     spellcheck:
-      run: npx cspell --exclude '**/.*' --no-must-find-files {push_files}
+      run: pnpm exec cspell --exclude '**/.*' --no-must-find-files {push_files}
     knip:
       run: nr knip
     types:
@@ -14,4 +14,4 @@ pre-push:
 commit-msg:
   commands:
     commitlint:
-      run: npx commitlint --edit {0}
+      run: pnpm exec commitlint --edit {0}

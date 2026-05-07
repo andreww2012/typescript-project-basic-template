@@ -12,6 +12,9 @@
     "u:pm": "ncu --dep packageManager",
     "deps:audit": "pnpm audit --audit-level high",
     "deps:dedupe-check": "pnpm dedupe --check",
+    "deps:peers-check": "pnpm peers check",
+    "deps:check": "nr deps:peers-check && nr deps:audit",
+    "deps:check:strict": "nr deps:dedupe-check && nr deps:check",
     "spellcheck": "cspell --no-progress --no-summary .",
     "format:check": "prettier --check . --log-level warn",
     "format:fix": "prettier --write . --log-level warn",
@@ -46,8 +49,13 @@
     "tsx": "4.21.0",
     "typescript": "6.0.3"
   },
-  "packageManager": "pnpm@10.33.1",
   "engines": {
     "node": "^22.18.0 || >=24"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.0.8"
+    }
   }
 }
