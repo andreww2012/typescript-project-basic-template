@@ -1,4 +1,3 @@
-// cspell:ignore dont
 import {eslintConfig} from 'eslint-config-un';
 
 export default eslintConfig({
@@ -9,7 +8,7 @@ export default eslintConfig({
     },
 
     // False positives:
-    youDontNeedLodashUnderscore: false,
+    // youDontNeedLodashUnderscore: false, // cspell:disable-line
     zod: false,
   },
 });
