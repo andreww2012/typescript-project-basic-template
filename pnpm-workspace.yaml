@@ -6,7 +6,8 @@ minimumReleaseAgeExclude: []
 
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200 # 30 days in minutes
-trustPolicyExclude: []
+trustPolicyExclude: # []
+  - tinyexec@1.2.2 # Uses staged publishing instead of trusted publishing
 
 allowBuilds:
   # core-js: false # Donation message
