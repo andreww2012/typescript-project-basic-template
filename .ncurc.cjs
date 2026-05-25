@@ -14,7 +14,7 @@ const IGNORED_PACKAGES = new Set();
 const IGNORED_MAJOR_VERSION_TRANSITIONS = new Set(['@types/node']);
 
 /**
- * @type {Record<string, {packages: string[], groupName?: string, icon?: string, priority?: number | null}>}
+ * @type {Record<string, {packages: string[]; groupName?: string; icon?: string; priority?: number | null}>}
  */
 const PACKAGE_GROUPS = Object.entries({
   'Package manager': {

@@ -38,22 +38,22 @@
   },
   "devDependencies": {
     "@antfu/ni": "30.1.0",
-    "@commitlint/cli": "20.5.3",
-    "@commitlint/config-conventional": "20.5.3",
-    "@commitlint/types": "20.5.0",
-    "@eslint/config-inspector": "2.0.1",
+    "@commitlint/cli": "21.0.1",
+    "@commitlint/config-conventional": "21.0.1",
+    "@commitlint/types": "21.0.1",
+    "@eslint/config-inspector": "3.0.2",
     "@types/node": "22.19.17",
-    "@typescript/native-preview": "7.0.0-dev.20260507.1",
+    "@typescript/native-preview": "7.0.0-dev.20260524.1",
     "cross-env": "10.1.0",
     "cspell": "10.0.0",
-    "eslint": "10.3.0",
-    "eslint-config-un": "1.0.0-beta.10",
-    "knip": "6.12.1",
-    "lefthook": "2.1.6",
-    "npm-check-updates": "22.1.1",
+    "eslint": "10.4.0",
+    "eslint-config-un": "1.0.0-beta.11",
+    "knip": "6.14.2",
+    "lefthook": "2.1.8",
+    "npm-check-updates": "22.2.1",
     "prettier": "3.8.3",
-    "semver": "7.7.4",
-    "tsx": "4.21.0",
+    "semver": "7.8.1",
+    "tsx": "4.22.3",
     "typescript": "6.0.3"
   },
   "engines": {
@@ -62,7 +62,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "11.0.8"
+      "version": "11.3.0"
     }
   }
 }
