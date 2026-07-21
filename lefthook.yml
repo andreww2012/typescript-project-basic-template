@@ -11,6 +11,15 @@ pre-push:
       run: nr knip
     types:
       run: nr lint:types
+
+pre-commit:
+  parallel: true
+  skip: [merge, rebase]
+  commands:
+    prettier:
+      run: pnpm exec prettier --write --ignore-unknown --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+
 commit-msg:
   commands:
     commitlint:
