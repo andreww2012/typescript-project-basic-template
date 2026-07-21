@@ -20,9 +20,9 @@
     "format:fix": "prettier --write . --log-level warn",
     "eslint:inspect": "eslint-config-inspector --open false",
     "lint:eslint": "eslint --cache",
+    "lint:types:6": "tsc6 --noEmit",
     "lint:types": "tsc --noEmit",
-    "lint:types:go": "tsgo --noEmit",
-    "lint": "nr format:check && nr lint:types:go && nr lint:eslint",
+    "lint": "nr format:check && nr lint:types && nr lint:eslint",
     "lint:fix": "nr format:fix && nr lint:eslint:fix",
     "knip": "knip --no-progress",
     "t": "vitest",
@@ -43,7 +43,6 @@
     "@commitlint/types": "21.2.0",
     "@eslint/config-inspector": "3.1.0",
     "@types/node": "22.19.17",
-    "@typescript/native-preview": "7.0.0-dev.20260707.2",
     "cross-env": "10.1.0",
     "cspell": "10.0.1",
     "eslint": "10.7.0",
@@ -54,7 +53,8 @@
     "prettier": "3.9.6",
     "semver": "7.8.5",
     "tsx": "4.23.1",
-    "typescript": "6.0.3"
+    "typescript-6": "npm:@typescript/typescript6@6.0.2",
+    "typescript": "npm:typescript@7.0.2"
   },
   "engines": {
     "node": "^22.23.1 || >=24"
