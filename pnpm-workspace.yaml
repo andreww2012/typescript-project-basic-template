@@ -2,9 +2,7 @@
 saveExact: true
 
 minimumReleaseAge: 960 # 16 hours in minutes
-minimumReleaseAgeExclude:
-  # []
-  - prettier@3.9.6
+minimumReleaseAgeExclude: []
 
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200 # 30 days in minutes
