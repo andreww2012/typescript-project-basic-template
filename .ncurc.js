@@ -1,10 +1,10 @@
 // @ts-check
-const fs = require('node:fs');
-const path = require('node:path');
-const semver = require('semver');
-const packageJson = require('./package.json');
+import fs from 'node:fs';
+import path from 'node:path';
+import semver from 'semver';
+import packageJson from './package.json' with {type: 'json'};
 
-const CACHE_DIRECTORY = path.join(__dirname, 'node_modules/.cache/npm-check-updates');
+const CACHE_DIRECTORY = path.join(import.meta.dirname, 'node_modules/.cache/npm-check-updates');
 fs.mkdirSync(CACHE_DIRECTORY, {recursive: true});
 
 /** @type {Set<string>} */
@@ -48,7 +48,7 @@ const PACKAGE_GROUPS = Object.entries({
 /**
  * @type {import('npm-check-updates').RunOptions}
  */
-module.exports = {
+export default {
   cache: true,
   cacheExpiration: 30,
   cacheFile: path.join(CACHE_DIRECTORY, 'cache.json'),
