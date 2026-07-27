@@ -6,6 +6,9 @@ export default eslintConfig({
   //   allowDefaultProject: ['*.config.*ts'],
   // },
   configs: {
+    markdown: {
+      configSentencesPerLine: true,
+    },
     // noStylisticRules: true,
     // noStylisticRules: {
     //   enableRules: {

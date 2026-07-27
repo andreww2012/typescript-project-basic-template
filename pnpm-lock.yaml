@@ -244,7 +244,10 @@ importers:
         version: 10.8.0(jiti@2.7.0)(supports-color@9.4.0)
       eslint-config-un:
         specifier: 1.0.0-beta.15
-        version: 1.0.0-beta.15(@eslint/css-tree@4.0.5)(@types/estree@1.0.9)(@typescript-eslint/utils@8.65.0)(@typescript/typescript6@6.0.2)(browserslist@4.28.7)(eslint@10.8.0)(supports-color@9.4.0)
+        version: 1.0.0-beta.15(@eslint/css-tree@4.0.5)(@types/estree@1.0.9)(@typescript-eslint/utils@8.65.0)(@typescript/typescript6@6.0.2)(browserslist@4.28.7)(eslint-plugin-sentences-per-line@0.1.3)(eslint@10.8.0)(supports-color@9.4.0)
+      eslint-plugin-sentences-per-line:
+        specifier: 0.1.3
+        version: 0.1.3(jiti@2.7.0)(supports-color@9.4.0)
       knip:
         specifier: 6.29.0
         version: 6.29.0
@@ -2782,6 +2785,9 @@ packages:
     resolution: {integrity: sha512-/lZCkOxPOWaf1jXAqgICrS8St3BMBccIPvhOSUYuV6VCr1o5nFVG998FnTLt6w2Nxb8Uo0nM8fzmnhp+GY/aEg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  eslint-plugin-sentences-per-line@0.1.3:
+    resolution: {integrity: sha512-VjCDI8+r2WBLgVUeHp/3YQBFgreLTFij6V+ZoOHX9uuPAT00knDt/oX4fDw+cXfsPYloGqJW7jnZ0PUUQ3k0Tw==}
+
   eslint-plugin-sonarjs@4.2.0:
     resolution: {integrity: sha512-bqADfuNtTL7VK6RU29eoiFTtaaBKIpVPuX3bOl+rBpWSBa0zIBVZlqZNZQjfP6s4iXkAJokv5IsD8OsACkwApg==}
     peerDependencies:
@@ -3992,6 +3998,10 @@ packages:
     resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
+
+  sentences-per-line@0.5.3:
+    resolution: {integrity: sha512-pXuRJ4bKjxEaRVi7ZbwJBF2THPShuLHvWjw9yCtyn5qNqgAfZ/sqPHJu9HS72TffLQwIFX+aSP61HuGGz+7Aww==}
+    engines: {node: '>=22.14.0'}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -6290,7 +6300,7 @@ snapshots:
     dependencies:
       eslint: 10.8.0(jiti@2.7.0)(supports-color@9.4.0)
 
-  eslint-config-un@1.0.0-beta.15(@eslint/css-tree@4.0.5)(@types/estree@1.0.9)(@typescript-eslint/utils@8.65.0)(@typescript/typescript6@6.0.2)(browserslist@4.28.7)(eslint@10.8.0)(supports-color@9.4.0):
+  eslint-config-un@1.0.0-beta.15(@eslint/css-tree@4.0.5)(@types/estree@1.0.9)(@typescript-eslint/utils@8.65.0)(@typescript/typescript6@6.0.2)(browserslist@4.28.7)(eslint-plugin-sentences-per-line@0.1.3)(eslint@10.8.0)(supports-color@9.4.0):
     dependencies:
       '@andreww2012/unutils': 0.1.0
       '@antfu/utils': 9.3.0
@@ -6360,6 +6370,7 @@ snapshots:
     optionalDependencies:
       '@eslint/css-tree': 4.0.5
       browserslist: 4.28.7
+      eslint-plugin-sentences-per-line: 0.1.3(jiti@2.7.0)(supports-color@9.4.0)
     transitivePeerDependencies:
       - '@types/estree'
       - '@typescript-eslint/utils'
@@ -6721,6 +6732,15 @@ snapshots:
   eslint-plugin-security@4.0.1:
     dependencies:
       safe-regex: 2.1.1
+
+  eslint-plugin-sentences-per-line@0.1.3(jiti@2.7.0)(supports-color@9.4.0):
+    dependencies:
+      '@eslint/markdown': 8.0.3(supports-color@9.4.0)
+      eslint: 10.8.0(jiti@2.7.0)(supports-color@9.4.0)
+      sentences-per-line: 0.5.3
+    transitivePeerDependencies:
+      - jiti
+      - supports-color
 
   eslint-plugin-sonarjs@4.2.0(eslint@10.8.0):
     dependencies:
@@ -8272,6 +8292,8 @@ snapshots:
   sdbm@3.0.0: {}
 
   semver@7.8.5: {}
+
+  sentences-per-line@0.5.3: {}
 
   shebang-command@2.0.0:
     dependencies:
