@@ -6,6 +6,7 @@ import semver from 'semver';
 import packageJson from './package.json' with {type: 'json'};
 
 const CACHE_DIRECTORY = path.join(import.meta.dirname, 'node_modules/.cache/npm-check-updates');
+// eslint-disable-next-line unicorn/no-top-level-side-effects
 fs.mkdirSync(CACHE_DIRECTORY, {recursive: true});
 
 /** @type {Set<string>} */
@@ -86,7 +87,7 @@ export default defineConfig({
   format: ['group'],
   interactive: true,
   groupFunction: (fullName) => {
-    const [nameScope] = fullName.split('/');
+    const [nameScope] = fullName.split('/', 1);
     const knownGroup = PACKAGE_GROUPS[fullName] || PACKAGE_GROUPS[`${nameScope}/*`];
 
     if (knownGroup) {
