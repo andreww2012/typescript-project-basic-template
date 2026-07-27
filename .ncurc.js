@@ -13,6 +13,9 @@ const IGNORED_PACKAGES = new Set();
 /** @type {Set<string>} */
 const PACKAGES_WITH_PINNED_MAJOR_VERSION = new Set(['@types/node']);
 
+/** Their `latest` dist-tag lags behind the prerelease channel we actually follow. */
+const PACKAGES_ON_PRERELEASE_CHANNEL = new Set(['eslint-config-un']);
+
 /**
  * @type {Record<string, {packages: string[]; groupName?: string; icon?: string; priority?: number | null}>}
  */
@@ -53,8 +56,13 @@ export default {
   cacheExpiration: 30,
   cacheFile: path.join(CACHE_DIRECTORY, 'cache.json'),
 
-  target: (packageName) =>
-    PACKAGES_WITH_PINNED_MAJOR_VERSION.has(packageName) ? 'minor' : 'latest',
+  target: (packageName) => {
+    if (PACKAGES_WITH_PINNED_MAJOR_VERSION.has(packageName)) {
+      return 'minor';
+    }
+
+    return PACKAGES_ON_PRERELEASE_CHANNEL.has(packageName) ? 'greatest' : 'latest';
+  },
   filterResults: (
     packageName,
     {currentVersion: currentVersionRaw, upgradedVersion: upgradedVersionRaw},
