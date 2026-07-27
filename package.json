@@ -25,7 +25,7 @@
     "lint:ts6": "tsc6 --noEmit",
     "knip:main": "knip --no-progress",
     "knip:cycles": "knip --no-progress --cycles --reporter cycles",
-    "knip": "nr '/^knip:*$/'",
+    "knip": "nr '/^knip:.+$/'",
     "check": "nr '/^(knip|spellcheck|lint:ts|format:check|lint:eslint)$/'",
     "check:deps": "nr '/^deps:(peers:check|audit)$/'",
     "check:deps:strict": "nr '/^deps:.+$/'",
