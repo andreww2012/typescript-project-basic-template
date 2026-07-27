@@ -1,6 +1,7 @@
 // @ts-check
 import fs from 'node:fs';
 import path from 'node:path';
+import {defineConfig} from 'npm-check-updates';
 import semver from 'semver';
 import packageJson from './package.json' with {type: 'json'};
 
@@ -48,10 +49,7 @@ const PACKAGE_GROUPS = Object.entries({
   return Object.assign(result, packagesInCurrentGroup);
 }, {});
 
-/**
- * @type {import('npm-check-updates').RunOptions}
- */
-export default {
+export default defineConfig({
   cache: true,
   cacheExpiration: 30,
   cacheFile: path.join(CACHE_DIRECTORY, 'cache.json'),
@@ -100,4 +98,4 @@ export default {
       ? '2. 🧑‍💻 Dev dependencies'
       : '1. 📦 Direct dependencies';
   },
-};
+});
