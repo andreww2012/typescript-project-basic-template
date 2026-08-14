@@ -12,6 +12,14 @@ fs.mkdirSync(CACHE_DIRECTORY, {recursive: true});
 /** @type {Set<string>} */
 const IGNORED_PACKAGES = new Set();
 
+/**
+ * Blocks *updating to* any version matching the given semver range for a package
+ * (it does not restrict the version we update *from*). Use to skip a known-broken
+ * release until a fix ships. Each entry should document why it is blocked
+ * @type {Record<string, string>}
+ */
+const IGNORED_PACKAGE_RANGES_TO_UPDATE = {};
+
 /** @type {Set<string>} */
 const PACKAGES_WITH_PINNED_MAJOR_VERSION = new Set(['@types/node']);
 
@@ -75,6 +83,12 @@ export default defineConfig({
     const [currentVersion, upgradedVersion] = [currentVersionRaw, upgradedVersionRaw].map((v) =>
       v.split('@').at(-1),
     );
+
+    const blockedVersionRange = IGNORED_PACKAGE_RANGES_TO_UPDATE[packageName];
+    if (blockedVersionRange && semver.satisfies(upgradedVersion || '', blockedVersionRange)) {
+      return false;
+    }
+
     const [currentVersionSemver, upgradedVersionSemver] = [currentVersion, upgradedVersion].map(
       (v) => semver.parse(v),
     );
