@@ -7,7 +7,8 @@ minimumReleaseAgeExcludePrune: true
 
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 43200 # 30 days in minutes
-trustPolicyExclude: []
+trustPolicyExclude: # []
+  - '@humanwhocodes/momoa@3.3.12' # cspell:disable-line
 
 allowBuilds:
   esbuild@0.28.2: false
