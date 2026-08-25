@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {defineConfig} from 'npm-check-updates';
-import semver from 'semver';
+import {satisfies, tryParse} from 'verkit';
 import packageJson from './package.json' with {type: 'json'};
 
 const CACHE_DIRECTORY = path.join(import.meta.dirname, 'node_modules/.cache/npm-check-updates');
@@ -85,12 +85,12 @@ export default defineConfig({
     );
 
     const blockedVersionRange = IGNORED_PACKAGE_RANGES_TO_UPDATE[packageName];
-    if (blockedVersionRange && semver.satisfies(upgradedVersion || '', blockedVersionRange)) {
+    if (blockedVersionRange && satisfies(upgradedVersion || '', blockedVersionRange)) {
       return false;
     }
 
     const [currentVersionSemver, upgradedVersionSemver] = [currentVersion, upgradedVersion].map(
-      (v) => semver.parse(v),
+      (v) => tryParse(v || ''),
     );
     return !(
       PACKAGES_WITH_PINNED_MAJOR_VERSION.has(packageName) &&

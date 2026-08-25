@@ -260,9 +260,6 @@ importers:
       prettier:
         specifier: 3.9.6
         version: 3.9.6
-      semver:
-        specifier: 7.8.5
-        version: 7.8.5
       tsx:
         specifier: 4.23.12
         version: 4.23.12
@@ -272,6 +269,9 @@ importers:
       typescript7:
         specifier: npm:typescript@7.0.2
         version: typescript@7.0.2
+      verkit:
+        specifier: 0.4.0
+        version: 0.4.0
 
 packages:
 
@@ -4387,6 +4387,10 @@ packages:
 
   verkit@0.3.2:
     resolution: {integrity: sha512-zj/ob3UsvJGN0whEAKFp53REA5X66hvffVqoCtVQAakJKnKlH+/PcOfMoFwIG/o4rElqLv/ycAFlx8ZlXUorCg==}
+    engines: {node: '>=18.12.0'}
+
+  verkit@0.4.0:
+    resolution: {integrity: sha512-sXMwN6DMHeouPfCxkxWkKAmxphWKEenHYY5H1nIBzU3PmDsmJp6kBXJdshjVdpMZuWCmL9SH7KFRx29AylpP6g==}
     engines: {node: '>=18.12.0'}
 
   vfile-message@4.0.3:
@@ -8808,6 +8812,8 @@ snapshots:
   validate-npm-package-name@7.0.2: {}
 
   verkit@0.3.2: {}
+
+  verkit@0.4.0: {}
 
   vfile-message@4.0.3:
     dependencies:
