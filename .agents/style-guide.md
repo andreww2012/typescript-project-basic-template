@@ -4,7 +4,16 @@
 
 # Style Guide
 
-Source: <https://github.com/andreww2012/agents/blob/13966c09b9782f9f0ae1a95b2df17f4a16818be4/.agents/style-guide.md>
+Source: <https://github.com/andreww2012/agents/blob/8409b854e3545f587eac81f77c3208de5d13abda/.agents/style-guide.md>
+
+## Communication
+
+Use plain English for the output, while still respecting language and prose style used in the current project for generated code.
+Sound human.
+Avoid long dashes.
+Avoid terms and phrases like "load-bearing", "it's not x; it's y" and similar, and other jargonisms.
+Don't be verbose in general.
+All above is not a hard ban - you can use whatever if it actually fits and makes sense.
 
 ## Code
 
