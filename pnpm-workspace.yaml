@@ -10,6 +10,10 @@ trustPolicyIgnoreAfter: 43200 # 30 days in minutes
 trustPolicyExclude: # []
   - '@humanwhocodes/momoa@3.3.12' # cspell:disable-line
 
+audit:
+  ignore: []
+  ignorePrune: true
+
 allowBuilds:
   esbuild@0.28.2: false
   lefthook@2.1.10: true
