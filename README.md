@@ -29,12 +29,10 @@ Just copy the whole repo, change/review at least these things around and you're 
 
 - [ ] Review the commented out lines [in the ESLint config file](./eslint.config.ts)
 
-<!-- eslint-disable-next-line markdown-preferences/heading-casing -->
 ### CSpell
 
 - [ ] Review [the CSpell config file](./cspell.config.ts)
 
-<!-- eslint-disable-next-line markdown-preferences/heading-casing -->
 ### knip
 
 - [ ] Review [the knip config file](./knip.config.ts)
@@ -45,12 +43,10 @@ Just copy the whole repo, change/review at least these things around and you're 
 - [ ] Review [the `commitlint` config file](./commitlint.config.ts)
 - [ ] Review [the `lefthook` config file](./lefthook.yml)
 
-<!-- eslint-disable-next-line markdown-preferences/heading-casing -->
 ### AI
 
 - [ ] Review [the `AGENTS.md` file] (`CLAUDE.md` is a symlink to it)
 
-<!-- eslint-disable-next-line markdown-preferences/heading-casing -->
 ### ⚠️ Final TODO item
 
 - [ ] Clear this `README.md` file :-)

@@ -2,7 +2,11 @@
 saveExact: true
 
 minimumReleaseAge: 960 # 16 hours in minutes
-minimumReleaseAgeExclude: []
+minimumReleaseAgeExclude: # []
+  - eslint@10.11.0
+  - eslint-config-un@1.0.0-rc.1
+  - knip@6.37.0
+  - verkit@0.5.0
 minimumReleaseAgeExcludePrune: true
 
 trustPolicy: no-downgrade
@@ -15,7 +19,7 @@ audit:
 
 allowBuilds:
   esbuild: false
-  lefthook@2.1.12: true
+  lefthook@2.1.14: true
   unrs-resolver: false
 
 dedupePeers: true

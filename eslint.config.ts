@@ -1,11 +1,12 @@
 import {eslintConfig} from 'eslint-config-un';
 
 export default eslintConfig({
-  // defaultConfigsStatus: 'misc-enabled',
   // typeInfoRules: {
   //   allowDefaultProject: ['*.config.*ts'],
   // },
+  // defaultConfigsStatus: 'misc-enabled',
   configs: {
+    fileProgress: true,
     markdown: {
       configSentencesPerLine: true,
     },
@@ -16,6 +17,7 @@ export default eslintConfig({
     //     disableAllOtherRules: true,
     //   },
     // },
+    sonar: true,
     // ts: {
     //   configDisableNoUnsafe: true,
     //   configNoTypeAssertion: true,
