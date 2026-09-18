@@ -14,9 +14,9 @@ audit:
   ignorePrune: true
 
 allowBuilds:
-  esbuild@0.28.2: false
+  esbuild: false
   lefthook@2.1.12: true
-  unrs-resolver@1.12.2: false
+  unrs-resolver: false
 
 dedupePeers: true
 strictPeerDependencies: false
