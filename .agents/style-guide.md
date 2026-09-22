@@ -4,16 +4,23 @@
 
 # Style Guide
 
-Source: <https://github.com/andreww2012/agents/blob/4321a6301232ff6f6f3275c421f304ec640f7477/.agents/style-guide.md>
+Source: <https://github.com/andreww2012/agents/blob/9e4d1f3505f9ae28aa97046336057666868c26eb/.agents/style-guide.md>
 
 ## Communication
 
-Use plain English for the output, while still respecting language and prose style used in the current project for generated code.
+**CRITICAL:** Use plain/simple English for your output, while still respecting language and prose style used in the current project for generated code.
+Most likely you'll be read by people who are not native or C2-level speakers, so adapt accordingly.
+Strictly avoid:
+  - long dashes;
+  - terms and phrases like "load-bearing", "byte-identical", "it's not x; it's y", "earn sth place" and similar;
+  - complex metaphors and jargonisms;
+  - mannered prose;
+  - advanced, fancy or rarely used words.
+In general, don't be verbose.
+If something can be said more concisely and simply without losing meaning, say it more concisely and simply: people shouldn't waste their energy just to understand you.
 Sound human.
-Avoid long dashes.
-Avoid terms and phrases like "load-bearing", "it's not x; it's y" and similar, and other jargonisms.
-Don't be verbose in general.
 All above is not a hard ban - you can use whatever if it actually fits and makes sense.
+This applies to all languages, not only English.
 
 ## Code
 
@@ -44,16 +51,19 @@ All above is not a hard ban - you can use whatever if it actually fits and makes
 - Prefer "direct" conditions over negated:
   - Good: `a ? b : c`, `if (a) { ... } else { ... }`
   - Bad: `!a ? c : b`, `if (!a) { ... } else { ... }`
-- If you need a map that is initially empty and will be mutated, use `Map` instead of a plain object whenever possible.
-- Prefer `||` over `??` unless the latter actually changes the logic in a positive way.
+- If you need a map that is initially empty and will be mutated, use `Map` instead of a plain object whenever possible: adding or removing object properties is usually *very* bad for performance.
+- If `||` and `??` operators work identical, prefer using `||`.
 - For constants, use CONSTANT_CASE <=> value is statically constructed:
   - Good: `const FOO = 'bar'`;
   - Good: `const FOO = ['bar', 1 + 2])`;
   - Bad: `const FOO = ['bar', Math.random()]`.
+- Prefer `Record<string, unknown>` over `object` TypeScript type as the former is usually simpler to reason about.
+- Prefer `Array#reduce` over creating an object and modifying its properties in a loop.
 - When a symbol is only used once, prefer to inline it unless it is non-trivial.
 - Keep each sentence in Markdown or JSDoc on a separate line, exactly like in this document.
   Exception: don't do that in `.changeset/*.md` files as they would be rendered differently in the changelog file that [changesets](https://github.com/changesets/changesets) are rendering.
 - Minimize referencing symbol names in comments: if they ever get renamed in the codebase, there's a real risk of your reference becoming stale.
+- Don't use `satisfies T` if the regular type annotation (`: T`) would work the same.
 
 ## General
 
@@ -63,17 +73,16 @@ Prefer not to use a stash to find a root cause, test hypotheses and similar - it
 
 Use `kebab-case` for files and directory names, unless they are called differently by convention (like `README.md`, `AGENTS.md`, etc).
 
-Don't invoke other package managers except for the used one - i.e. strongly prefer say `pnpm run` instead of `npm run` if pnpm is clearly used.
-If [`@antfu/ni` commands](https://raw.githubusercontent.com/antfu-collective/ni/refs/heads/main/README.md) are available, prefer them instead of package manager native ones (i.e. `ni` instead of say `pnpm i(nstall)`).
+Avoid British variants of words like *behaviour* or *organisation* unless the project allows them.
 
-Avoid British variants of words like *behaviour* or *organisation*.
-
-Always challenge your implementation for performance, ergonomics and code length issues (remember DRY, KISS principles) and find ways to improve it.
+Always challenge your implementation for performance, ergonomics and code length issues and find ways to improve it.
+Adhere to DRY, KISS, YAGNI, Rule of three and other principles/rules of writing clean and maintainable code.
 Don't over-engineer or over-optimize things though - this is not required in majority of cases.
 
-Never commit or stage changes unless explicitly asked to.
-
 If you're asked to implement X, always consult the `.{agents,claude}/skills` directory of the repo that might contain the relevant implementation info/instructions.
+
+Avoid invoking non-used package managers' commands - i.e. if `pnpm` is used in the project, you must use `pnpm why` instead of `npm why`, unless the equivalent is missing.
+If [`@antfu/ni` commands](https://raw.githubusercontent.com/antfu-collective/ni/refs/heads/main/README.md) are available, prefer them instead of package manager native ones (i.e. `ni` instead of `(p)npm i(nstall)`, `nr` instead of `(p)npm run` and so on).
 
 ## Testing tools, linters and checkers
 
@@ -83,11 +92,13 @@ If there are specific package.json scripts to invoke them, prefer them instead o
 
 - TypeScript as type checker (usually `tsc --noEmit` or `vue-tsc --notEmit` for Vue projects)
 - ESLint (`eslint list.ext1 of.ext2 changed.ext3 files.ext4`)
-- Prettier (`prettier --write --log-level warn changed.ts files.js`)
+- Prettier/oxlint (`prettier --write --log-level warn changed.ts files.js`)
 - Vitest (usually `vitest run changed.spec.ts files.spec.js`)
 - Knip (`knip`)
 - CSpell (`cspell --no-progress --no-summary changed.ext1 files.ext2`)
 - Dependency vulnerability checker (if the lockfile was modified), for example `pnpm audit --audit-level high` (usually high+ vulnerabilities are only important to fix)
+
+Don't report how extensively you've verified your work - if you need to say that, say very briefly.
 
 ### CSpell
 
