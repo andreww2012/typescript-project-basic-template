@@ -3,10 +3,7 @@ saveExact: true
 
 minimumReleaseAge: 960 # 16 hours in minutes
 minimumReleaseAgeExclude: # []
-  - eslint@10.11.0
-  - eslint-config-un@1.0.0-rc.1
-  - knip@6.37.0
-  - verkit@0.5.0
+  - actions-up@1.20.1
 minimumReleaseAgeExcludePrune: true
 
 trustPolicy: no-downgrade
