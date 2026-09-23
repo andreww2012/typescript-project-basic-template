@@ -51,7 +51,7 @@
     "cross-env": "10.1.0",
     "cspell": "10.3.3",
     "eslint": "10.11.0",
-    "eslint-config-un": "1.0.0-rc.1",
+    "eslint-config-un": "1.0.0-rc.2",
     "eslint-plugin-sentences-per-line": "0.1.6",
     "eslint-plugin-sonarjs": "4.2.1",
     "knip": "6.37.0",
