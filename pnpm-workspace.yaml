@@ -1,5 +1,7 @@
 # shamefullyHoist: true
 saveExact: true
+autoDedupe: true
+saveTypes: true
 
 minimumReleaseAge: 960 # 16 hours in minutes
 minimumReleaseAgeExcludePrune: true
