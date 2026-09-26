@@ -2,8 +2,6 @@
 saveExact: true
 
 minimumReleaseAge: 960 # 16 hours in minutes
-minimumReleaseAgeExclude: # []
-  - actions-up@1.20.1
 minimumReleaseAgeExcludePrune: true
 
 trustPolicy: no-downgrade
